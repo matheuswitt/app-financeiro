@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>O Tesoureiro</title>
+</head>
+
+<body>
+    <header>
+        <button>MENU</button>
+    </header>
+
+    <main>
+        <section id="saldo-section">
+            <div id="saldo-conta" class="card">
+                <h1>Seu saldo é de <br><span id="saldo-valor">R$ 0,00</span></h1>
+            </div>
+            <div id="icone-troca-conta" class="card">
+                <button>BOTAO</button>
+            </div>
+        </section>
+
+        <section id="transacoes-recentes-section">
+            <h2 class="section-title">Transações recentes</h2>
+            
+            <div id="transacoes-div" class="card">
+                <input type="search" name="search" id="search-transacoes" placeholder="buscar transações">
+                <ul id="transacoes-lista">
+                    <li class="transacao-item">
+                        <div class="transacao-info">
+                            <p class="transacao-descricao">Salário</p>
+                            <time class="transacao-data">01/10/2023 - 16:20</time>
+                        </div>
+                        <p class="transacao-valor positivo">+ R$ 3000,00</p>
+                    </li>
+                    <li class="transacao-item">
+                        <div class="transacao-info">
+                            <p class="transacao-descricao">Salário</p>
+                            <time class="transacao-data">01/10/2023 - 16:20</time>
+                        </div>
+                        <p class="transacao-valor positivo">+ R$ 3000,00</p>
+                    </li>
+                </ul>
+            </div>
+
+            <button id="ver-todas-transacoes-button" class="card">ver todas</button>
+        </section>
+
+        <section id="mini-cards-section">
+            <div class="mini-card"><h1>Contas<br>e cartões</h1></div>
+            <div class="mini-card"><h1>Balanço mensal</h1></div>
+            <div class="mini-card"><h1>Categorias</h1></div>
+        </section>
+
+
+        <section id="cadastro-transacao-section">
+            <button id="fechar-cadastro-button">fechar</button>
+            <div id="cadastro-transacao-container" class="cadastro-aberto">
+                <div id="selecao-tipo-transacao-container">
+                    <button id="adicionar-gasto-button">🔄</button>
+                    <button id="adicionar-gasto-button">+</button>
+                    <button id="adicionar-gasto-button">+</button>
+                </div>
+                <h1>Cadastro de Transação</h1>
+                <div id="form-cadastro-transacao-container">
+                    <form action="" id="cadastro-transacao-form">
+                        <label for="descricao">Descrição:</label>
+                        <input type="text" id="descricao" name="descricao" required>
+                        <label for="valor">Valor:</label>
+                        <input type="number" id="valor" name="valor" required>
+                        <label for="data">Data:</label>
+                        <input type="date" id="data" name="data" required>
+                        <button type="submit" id="cadastrar-transacao-button">Cadastrar</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

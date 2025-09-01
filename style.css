@@ -1,0 +1,256 @@
+:root {
+    --cor-destaque-2: #765EEB;
+    --cor-destaque-3: #EB8C42;
+    --cor-receita: #56a259;
+    --cor-receita-background: #6baf6d;
+    --cor-despesa: #C73156;
+    --cor-transferencia: #6FABDB;
+    --cor-sobria-1: #759475;
+    --cor-sobria-2: #6B6560;
+    --cor-sobria-3: #62606B;
+    --background-card: #fff;
+    --background-main: #f0f0f0;
+}
+
+* {
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: 'Gotham Rounded', sans-serif;
+    font-size: 16px;
+}
+
+body,
+html,
+main {
+    height: auto;
+    background-color: var(--background-main);
+}
+
+header {
+    background-color: var(--background-card);
+    padding: 20px;
+    border-radius: 0px 0px 8px 9px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    padding: 16px;
+    margin: 0px 20px 20px 20px;
+}
+
+.card {
+    background-color: var(--background-card);
+    border-radius: 20px;
+    padding: 16px;
+    margin: 16px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#saldo-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+#saldo-conta {
+    border-radius: 10px;
+    border-top: 10px solid var(--cor-destaque-3);
+    width: 100%;
+}
+
+#saldo-conta h1 {
+    font-size: 1.5rem;
+}
+
+#saldo-valor {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+#icone-troca-conta {
+    border-radius: 10px;
+    height: auto;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    margin: 10px 30px -10px;
+}
+
+#transacoes-recentes-section {
+    display: flex;
+    flex-direction: column;
+}
+
+#search-transacoes {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    background-color: var(--background-main);
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 100;
+}
+
+#transacoes-lista {
+    list-style-type: none;
+    padding: 0;
+}
+
+.transacao-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    margin: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.transacao-descricao {
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.transacao-data {
+    font-size: 0.8rem;
+    font-weight: 100;
+    color: var(--cor-sobria-2);
+}
+
+.transacao-valor {
+    font-size: 1.2rem;
+    font-weight: 800;
+    align-self: flex-start;
+    color: var(--cor-receita);
+}
+
+#ver-todas-transacoes-button {
+    border: none;
+    margin: -10px 20px 20px 20px;
+    float: right;
+    padding: 5px 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    width: 80px;
+    align-self: flex-end;
+}
+
+#mini-cards-section {
+    display: flex;
+    flex-direction: row;
+    margin-top: -10px;
+    gap: 0px;
+    width: 100%;
+    overflow: scroll;
+    scrollbar-width: none; /* Firefox */
+}
+
+.mini-card {
+    min-width: 150px;
+    height: 150px;
+    background-color: var(--background-card);
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin: 10px 10px;
+    display: flex;
+}
+
+.mini-card h1 {
+    font-size: 1.2rem;
+    padding: 10px;
+    align-self: flex-end;
+}
+
+/* ----- CADASTRO ------ */
+
+#selecao-tipo-transacao-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    scroll-behavior: smooth;
+    overflow-x: auto;
+    mask-image: linear-gradient(to right, transparent, black 50%, transparent);
+
+}
+
+#cadastro-transacao-container {
+    position: fixed;
+    width: 100%;
+    height: 90%;
+    background-color: var(--cor-receita-background);
+    color: white;
+    padding: 20px;
+    border-radius: 50px 50px 0 0;
+    top: 90%;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.cadastro-aberto {
+    top: 15% !important;
+}
+
+button#adicionar-gasto-button {
+    background-color: transparent;
+    border: none;
+    font-size: 3rem;
+    display: block;
+    position: relative;
+    margin: auto;
+    cursor: pointer;
+    color: #fff;
+}
+
+#fechar-cadastro-button {
+    z-index: 1;
+    position: absolute;
+    top: 95%;
+    right: 10px;
+    width: 80px;
+    background-color: var(--cor-despesa);
+    color: var(--background-card);
+    border: none;
+    border-radius: 20px;
+    padding: 5px 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    font-size: 0.8rem;
+    cursor: pointer;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#cadastro-transacao-container h1 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+#cadastro-transacao-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#cadastro-transacao-form label {
+    margin: 0 0 5px 5px;
+    font-weight: 100;
+}
+
+#cadastro-transacao-form input {
+    margin: 0px 0px 20px 0px;
+    min-height: 40px !important;
+    border: none;
+    border-radius: 8px;
+    padding: 5px 10px;
+    font-size: 1.5rem;
+}
+
+#cadastrar-transacao-button {
+    height: 40px;
+    width: 50%;
+    background-color: var(--cor-destaque-3);
+    color: var(--background-card);
+    border: 1px solid var(--background-card);
+    border-radius: 8px;
+    cursor: pointer;
+}
