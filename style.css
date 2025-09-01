@@ -15,7 +15,7 @@
 * {
     margin: 0px;
     box-sizing: border-box;
-    font-family: 'Gotham Rounded', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
     font-size: 16px;
 }
 
@@ -205,8 +205,8 @@ button#adicionar-gasto-button {
 
 #fechar-cadastro-button {
     z-index: 1;
-    position: absolute;
-    top: 95%;
+    position: fixed;
+    top: 90%;
     right: 10px;
     width: 80px;
     background-color: var(--cor-despesa);
