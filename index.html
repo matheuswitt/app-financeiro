@@ -9,15 +9,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
 
-<link rel="stylesheet"
-  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 
     <title>O Tesoureiro</title>
 </head>
 
 <body>
     <header>
-        <button>MENU</button>
+        <button id="hamburger-menu-button"><span class="material-symbols-outlined">menu</span></button>
     </header>
 
     <main>
@@ -26,7 +25,7 @@
                 <h1>Seu saldo é de <br><span id="saldo-valor">R$ 0,00</span></h1>
             </div>
             <div id="icone-troca-conta" class="card">
-                <button>BOTAO</button>
+                <button><span class="material-symbols-outlined">overview_key</span></button>
             </div>
         </section>
 
@@ -76,25 +75,28 @@
             <button id="fechar-cadastro-button">fechar</button>
             <div id="cadastro-transacao-container">
                 <div id="selecao-tipo-transacao-container">
-                    <button id="adicionar-gasto-button"><span class="material-symbols-outlined">
+                    <button id="botao-transferencia" class="adicionar-transacao-button"><span class="material-symbols-outlined">
                             compare_arrows
                         </span></button>
-                    <button id="adicionar-gasto-button"><span class="material-symbols-outlined">
+                    <button id="botao-receita" class="adicionar-transacao-button"><span class="material-symbols-outlined">
                             add_2
                         </span></button>
-                    <button id="adicionar-gasto-button"><span class="material-symbols-outlined">
-remove
-</span></button>
+                    <button id="botao-despesa" class="adicionar-transacao-button"><span class="material-symbols-outlined">
+                            remove
+                        </span></button>
                 </div>
                 <h1>Cadastro de Transação</h1>
                 <div id="form-cadastro-transacao-container">
                     <form action="" id="cadastro-transacao-form">
                         <label for="descricao">Descrição:</label>
-                        <input type="text" id="descricao" name="descricao" required>
+                        <input type="text" id="descricao" name="descricao" required
+                            placeholder="Ex: Salário, conta de luz...">
                         <label for="valor">Valor:</label>
-                        <input type="number" id="valor" name="valor" required>
-                        <label for="data">Data:</label>
+                        <input type="number" id="valor" name="valor" required placeholder="R$ 0,00" step="0.01>
+                        <label for=" data">Data:</label>
                         <input type="date" id="data" name="data" required>
+                        
+                        
                         <button type="submit" id="cadastrar-transacao-button">Cadastrar</button>
                     </form>
                 </div>

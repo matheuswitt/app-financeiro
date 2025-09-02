@@ -2,6 +2,40 @@ const sectionCadastro = document.querySelector('#cadastro-transacao-container');
 const buttonFecharCadastro = document.querySelector('#fechar-cadastro-button');
 const overlay = document.createElement('div');
 
+const botaoTransferencia = document.querySelector('#botao-transferencia');
+const botaoDespesa = document.querySelector('#botao-despesa');
+const botaoReceita = document.querySelector('#botao-receita');
+
+
+botaoDespesa.addEventListener('click', () => {
+    sectionCadastro.classList.add('cadastro-aberto');
+    buttonFecharCadastro.style.top = '11%';
+    sectionCadastro.classList.add('background-despesa');
+    botaoDespesa.classList.remove('nao-selecionado');
+    botaoReceita.classList.add('nao-selecionado');
+    botaoTransferencia.classList.add('nao-selecionado');
+});
+
+botaoReceita.addEventListener('click', () => {
+    sectionCadastro.classList.add('cadastro-aberto');
+    buttonFecharCadastro.style.top = '11%';
+    sectionCadastro.classList.remove('background-despesa', 'background-transferencia');
+    sectionCadastro.classList.add('background-receita');
+    botaoReceita.classList.remove('nao-selecionado');
+    botaoDespesa.classList.add('nao-selecionado');
+    botaoTransferencia.classList.add('nao-selecionado');
+});
+
+botaoTransferencia.addEventListener('click', () => {
+    sectionCadastro.classList.add('cadastro-aberto');
+    buttonFecharCadastro.style.top = '11%';
+    sectionCadastro.classList.remove('background-despesa', 'background-receita');
+    sectionCadastro.classList.add('background-transferencia');
+    botaoTransferencia.classList.remove('nao-selecionado');
+    botaoDespesa.classList.add('nao-selecionado');
+    botaoReceita.classList.add('nao-selecionado');
+});
+
 sectionCadastro.addEventListener('click', () => {
     sectionCadastro.style.transition = 'top 0.5s ease';
     sectionCadastro.classList.add('cadastro-aberto');
@@ -25,3 +59,4 @@ buttonFecharCadastro.addEventListener('click', () => {
         overlay.classList.remove('overlay');
     }, 300);
 });
+
