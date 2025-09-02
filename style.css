@@ -165,6 +165,13 @@ header {
     color: var(--cor-receita);
 }
 
+.despesa {
+    color: var(--cor-despesa);
+}
+.receita {
+    color: var(--cor-receita);
+}
+
 #ver-todas-transacoes-button {
     border: none;
     margin: -10px 20px 20px 20px;
@@ -234,6 +241,7 @@ header {
     margin-bottom: 20px;
     scroll-behavior: smooth;
     overflow-x: auto;
+    transition: all 0.3s ease;
     /* mask-image: linear-gradient(to right, transparent, black 50%, transparent); */
 }
 
@@ -303,7 +311,7 @@ header {
 }
 
 #cadastro-transacao-container h1 {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     margin: 10px 0;
 }
 
