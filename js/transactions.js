@@ -2,8 +2,8 @@
 
 import { salvarTransacao, carregarTransacoes } from './storage.js';
 
-export function novaTransacao(descricao, valor, data, tipo) {
-    const transacao = { descricao, valor, data, tipo };
+export function novaTransacao(id, descricao, valor, data, tipo) {
+    const transacao = { id, descricao, valor: Number(valor), data, tipo };
     salvarTransacao(transacao);
     return transacao;
 }
