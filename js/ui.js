@@ -16,6 +16,7 @@ export function abrirCadastro(tipo) {
         sectionCadastro.classList.add(`background-${tipo}`);
     }
 
+    document.body.classList.add('no-scroll');
     overlay.classList.add('overlay');
     document.body.appendChild(overlay);
     setTimeout(() => overlay.classList.add('visivel'), 100);
@@ -31,7 +32,8 @@ export function abrirCadastro(tipo) {
 export function fecharCadastro() {
     sectionCadastro.classList.remove('cadastro-aberto');
     buttonFecharCadastro.style.top = '';
-    overlay.classList.remove('overlay-visivel');
+    document.body.classList.remove('no-scroll');
+    overlay.classList.remove('visivel');
     setTimeout(() => {
         overlay.classList.remove('overlay');
         document.body.removeChild(overlay);

@@ -31,6 +31,10 @@ a {
     color: inherit;
 }
 
+.no-scroll {
+    overflow: hidden;
+}
+
 header {
     background-color: var(--background-card);
     padding: 20px;
@@ -82,7 +86,7 @@ header {
 
 #saldo-valor {
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 #icone-troca-conta {
@@ -285,6 +289,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    top: 0%;
 }
 
 #cadastro-transacao-container {
@@ -295,7 +300,7 @@ header {
     color: white;
     padding: 10px 20px 50px 20px;
     border-radius: 50px 50px 50px 50px;
-    top: 88%;
+    top: 90%;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
     z-index: 10;
     transition: all 0.3s ease;
@@ -312,8 +317,7 @@ header {
 }
 
 .cadastro-aberto {
-    top: 50%;
-    transform: translateY(-100%);
+    top: 10px !important;
 }
 
 .adicionar-transacao-button {
@@ -321,6 +325,7 @@ header {
     border: none;
     font-size: 3rem;
     display: block;
+    margin: auto;
     position: relative;
     margin: auto;
     cursor: pointer;
@@ -349,20 +354,24 @@ header {
 #cadastro-transacao-container h1 {
     font-size: 1.7rem;
     margin: 10px 0;
+    text-align: center;
 }
 
 #cadastro-transacao-form {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 #cadastro-transacao-form label {
     margin: 0 0 5px 5px;
     font-weight: 100;
+    width: 100%;
 }
 
 #cadastro-transacao-form input {
     margin: 0px 0px 20px 0px;
+    width: 100%;
     min-height: 40px !important;
     border: none;
     border-radius: 8px;

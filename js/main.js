@@ -7,7 +7,7 @@ import { adicionarTransacaonaUI, abrirCadastro, fecharCadastro } from "./ui.js";
 let tipoSelecionado = null;
 
 window.addEventListener('DOMContentLoaded', () => {
-    const transacoes = carregarTransacoes();
+    const transacoes = carregarTransacoes().slice().reverse().slice(0, 5); // traz as ultimas 5 transações
     transacoes.forEach(transacao => {
         adicionarTransacaonaUI(transacao);
     });
@@ -29,8 +29,6 @@ form.addEventListener('submit', (e) => {
 
     form.reset();
 });
-
-listarTransacoes().forEach(adicionarTransacaonaUI);
 
 const botaoDespesa = document.querySelector('#botao-despesa');
 const botaoReceita = document.querySelector('#botao-receita');
