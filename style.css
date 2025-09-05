@@ -155,6 +155,9 @@ header {
     list-style-type: none;
     padding: 0;
     height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .transacao-container {
@@ -170,7 +173,6 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px 10px;
-    margin: 0;
     border: 1px solid var(--border-muted);
     border-radius: 8px;
     color: var(--text);
