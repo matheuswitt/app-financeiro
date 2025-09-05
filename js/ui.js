@@ -64,10 +64,19 @@ export function adicionarTransacaonaUI(transacao) {
     removerDefinitivo.textContent = 'X';
 
     remover.addEventListener('click', () => {
-        transacaoItem.classList.toggle('deslocado')
+        transacaoItem.classList.toggle('deslocado');
+        if (remover.textContent === 'remover') {
+            remover.textContent = 'cancelar';
+            remover.classList.add('cancelar');
+        } else {
+            remover.textContent = 'remover';
+            remover.classList.remove('cancelar');
+        }
         document.addEventListener('click', (event) => {
             if (!liContainer.contains(event.target)) {
                 transacaoItem.classList.remove('deslocado');
+                remover.textContent = 'remover';
+                remover.classList.remove('cancelar')
                 document.removeEventListener('click', arguments.callee);
             }
         });

@@ -124,6 +124,7 @@ header {
 .section-title {
     font-size: 1.5rem;
     margin: 10px 30px -10px;
+    color: var(--text);
 }
 
 #transacoes-recentes-section {
@@ -143,6 +144,11 @@ header {
     font-size: 1.2rem;
     font-weight: 100;
     transition: all 0.3s ease;
+    color: var(--text);
+}
+
+#search-transacoes::placeholder {
+    color: var(--text-muted);
 }
 
 #search-transacoes:focus {
@@ -251,6 +257,12 @@ header {
     border-radius: 15px;
 }
 
+.cancelar {
+    background-color: var(--primary);
+    color: #000;
+
+}
+
 #ver-todas-transacoes-button {
     border: none;
     margin: -10px 20px 20px 20px;
@@ -265,7 +277,7 @@ header {
 }
 
 #ver-todas-transacoes-button:hover {
-    background-color: var(--success);
+    background-color: var(--secondary);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
@@ -424,7 +436,7 @@ header {
     border-radius: 8px;
     padding: 10px 15px;
     font-size: 1.3rem;
-    color: var(--text-muted);
+    color: #000;
 }
 
 #cadastro-transacao-form input:focus {
