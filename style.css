@@ -1,15 +1,18 @@
 :root {
-    --cor-destaque-2: #765EEB;
-    --cor-destaque-3: #EB8C42;
-    --cor-receita: #56a259;
-    --cor-receita-background: #6baf6d;
-    --cor-despesa: #C73156;
-    --cor-transferencia: #6FABDB;
-    --cor-sobria-1: #759475;
-    --cor-sobria-2: #6B6560;
-    --cor-sobria-3: #62606B;
-    --background-card: #fff;
-    --background-main: #f0f0f0;
+    --bg-dark: oklch(0.1 0.025 260);
+    --bg: oklch(0.18 0.025 260);
+    --bg-light: oklch(0.25 0.025 260);
+    --text: oklch(0.96 0.05 260);
+    --text-muted: oklch(0.76 0.05 260);
+    --highlight: oklch(0.5 0.05 260);
+    --border: oklch(0.4 0.05 260);
+    --border-muted: oklch(0.3 0.05 260);
+    --primary: oklch(0.76 0.1 260);
+    --secondary: oklch(0.76 0.1 80);
+    --danger: oklch(53.768% 0.1556 23.952);
+    --warning: oklch(0.7 0.15 100);
+    --success: oklch(0.7 0.15 160);
+    --info: oklch(0.7 0.05 260);
 }
 
 * {
@@ -23,7 +26,7 @@ body,
 html,
 main {
     height: 100vh;
-    background-color: var(--background-main);
+    background-color: var(--bg-dark);
 }
 
 a {
@@ -60,11 +63,12 @@ header {
 }
 
 .card {
-    background-color: var(--background-card);
+    background-color: var(--bg);
     border-radius: 20px;
     padding: 16px;
     margin: 16px 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    color: var(--text);
 }
 
 #saldo-section {
@@ -82,11 +86,13 @@ header {
 
 #saldo-conta h1 {
     font-size: 1.5rem;
+    color: var(--text);
 }
 
 #saldo-valor {
     font-weight: bold;
     font-size: 1.5rem;
+    color: var(--text);
 }
 
 #icone-troca-conta {
@@ -154,6 +160,7 @@ header {
     padding: 10px 0;
     margin: 10px 0;
     border-bottom: 1px solid #eee;
+    color: var(--text);
 }
 
 .transacao-descricao {
@@ -164,26 +171,27 @@ header {
 .transacao-data {
     font-size: 0.8rem;
     font-weight: 100;
-    color: var(--cor-sobria-2);
+    color: var(--text-muted);
 }
 
 .transacao-valor {
     font-size: 1.2rem;
     font-weight: 800;
     align-self: flex-start;
-    color: var(--cor-receita);
+    color: var(--text);
 }
 
 .despesa {
-    color: var(--cor-despesa);
+    color: var(--danger);
 }
+
 .receita {
-    color: var(--cor-receita);
+    color: var(--success);
 }
 
 .remover-button {
-    background-color: var(--cor-despesa);
-    color: var(--background-card);
+    background-color: var(--danger);
+    color: var(--text);
     border: none;
     border-radius: 5px;
     width: 15px;
@@ -219,8 +227,7 @@ header {
 }
 
 #ver-todas-transacoes-button:hover {
-    background-color: var(--cor-destaque-3);
-    color: var(--background-card);
+    background-color: var(--success);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
@@ -231,17 +238,19 @@ header {
     gap: 0px;
     width: 100%;
     overflow: scroll;
-    scrollbar-width: none; /* Firefox */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 .mini-card {
     min-width: 150px;
     height: 150px;
-    background-color: var(--background-card);
+    background-color: var(--bg);
     border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     margin: 10px 10px;
     display: flex;
+    color: var(--text);
 }
 
 .mini-card h1 {
@@ -281,6 +290,7 @@ header {
 .nao-selecionado {
     opacity: 0.3;
 }
+
 .selecionado {
     opacity: 1;
 }
@@ -296,7 +306,7 @@ header {
     position: fixed;
     width: 95%;
     height: auto;
-    background-color: var(--cor-receita-background);
+    background-color: var(--success);
     color: white;
     padding: 10px 20px 50px 20px;
     border-radius: 50px 50px 50px 50px;
@@ -307,13 +317,11 @@ header {
 }
 
 #cadastro-transacao-container.background-receita {
-    background-color: var(--cor-receita-background);
+    background-color: var(--success);
 }
-#cadastro-transacao-container.background-transferencia {
-    background-color: var(--cor-transferencia);
-}
+
 #cadastro-transacao-container.background-despesa {
-    background-color: var(--cor-despesa);
+    background-color: var(--danger);
 }
 
 .cadastro-aberto {
@@ -339,8 +347,8 @@ header {
     top: 90%;
     right: 10px;
     width: 80px;
-    background-color: var(--cor-despesa);
-    color: var(--background-card);
+    background-color: var(--danger);
+    color: var(--text);
     border: none;
     border-radius: 20px;
     padding: 5px 10px;
@@ -377,23 +385,24 @@ header {
     border-radius: 8px;
     padding: 10px 15px;
     font-size: 1.3rem;
+    color: var(--text-muted);
 }
 
 #cadastro-transacao-form input:focus {
-    outline: 1px solid var(--cor-destaque-3);
-    box-shadow: inset 0 0 8px #eb8c4280;
+    outline: 1px solid var(--highlight);
+    box-shadow: inset 0 0 8px var(--highlight);
 }
 
 #data {
-    color: var(--cor-sobria-2);
+    color: var(--text-muted);
 }
 
 #cadastrar-transacao-button {
     height: 40px;
     width: 50%;
-    background-color: var(--cor-destaque-3);
+    background-color: var(--highlight);
     color: var(--background-card);
-    border: 1px solid var(--background-card);
+    border: 1px solid var(--border);
     border-radius: 8px;
     cursor: pointer;
 }
