@@ -41,27 +41,54 @@ export function fecharCadastro() {
 }
 
 export function adicionarTransacaonaUI(transacao) {
-    let lista = document.querySelector('#transacoes-lista');
-    let li = document.createElement('li');
-    li.classList.add('transacao-item');
+    // lista (ul) vira ul
+    // li (item da lista) vira liContainer
+    // transacaoConteudo (div)
+
+    let ul = document.querySelector('#transacoes-lista');
+    let liContainer = document.createElement('li');
+    liContainer.classList.add('transacao-container');
+    let transacaoItem = document.createElement('div');
+    transacaoItem.classList.add('transacao-item');
+
     let remover = document.createElement('button');
-    remover.textContent = 'X';
     remover.classList.add('remover-button');
+    remover.type = 'button';
+    remover.title = 'Remover transação';
+    remover.textContent = 'remover';
+    // Adiciona o "X" de confirmação dentro do botão de remover (remover)
+
+    let removerDefinitivo = document.createElement('div');
+    removerDefinitivo.classList.add('remover-confirmacao');
+    liContainer.appendChild(removerDefinitivo);
+    removerDefinitivo.textContent = 'X';
+
     remover.addEventListener('click', () => {
-        lista.removeChild(li);
+        transacaoItem.classList.toggle('deslocado')
+        document.addEventListener('click', (event) => {
+            if (!liContainer.contains(event.target)) {
+                transacaoItem.classList.remove('deslocado');
+                document.removeEventListener('click', arguments.callee);
+            }
+        });
+    });
+
+    removerDefinitivo.addEventListener('click', () => {
+        ul.removeChild(liContainer);
         // Aqui você pode adicionar a lógica para remover a transação do armazenamento também
         removerTransacaoDoArmazenamento(transacao.id);
         const saldoElemento = document.querySelector('#saldo-valor');
         saldoElemento.textContent = `R$ ${calcularSaldo().toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
     });
-    li.innerHTML = `
+
+    transacaoItem.innerHTML = `
         <div class="transacao-info">
             <p class="transacao-descricao">${transacao.descricao}</p>
             <time class="transacao-data">${transacao.data}</time>
             </div>
             <p class="transacao-valor ${transacao.tipo}">R$ ${transacao.valor.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</p>
             `;
-    lista.appendChild(li);
-    li.appendChild(remover);
+    ul.appendChild(liContainer);
+    liContainer.appendChild(transacaoItem);
+    transacaoItem.appendChild(remover);
 }
-
